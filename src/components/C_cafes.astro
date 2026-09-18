@@ -1,118 +1,34 @@
+---
+const cafes = [
+    { nombre: 'JON SNOW', img: 'images/jon.png', fondo: 'images/fondos/fondo_jon.png', descripcion: 'Americano con leche condensada', precio: '2.20€' },
+    { nombre: 'DRAGÓN FUJUR', img: 'images/fuju.png', fondo: 'images/fondos/fondo_fuju.png', descripcion: 'Café con leche y leche condensada', precio: '2.30€' },
+    { nombre: 'ABEJA MAYA', img: 'images/maya.png', fondo: 'images/fondos/fondo_maya.png', descripcion: 'Café con leche y miel', precio: '2.30€' },
+    { nombre: 'HUARGO FANTASMA', img: 'images/huargo.png', fondo: 'images/fondos/fondo_huargo.png', descripcion: 'Americano con leche condensada y nata', precio: '3.80€', imgClass: 'w-xs' },
+    { nombre: 'PRINCESA MONONOKE', img: 'images/mononoke.png', fondo: 'images/fondos/fondo_mononoke.png', descripcion: 'Café con leche cacao y nata', precio: '3.80€' },
+    { nombre: 'MAGO BELGARATH', img: 'images/mago.png', fondo: 'images/fondos/fondo_mago.png', descripcion: 'Americano bola de helado y nata', precio: '4.50€' },
+    { nombre: 'ARYA STARK', img: 'images/arya.png', fondo: 'images/fondos/fondo_arya.png', descripcion: 'Café con leche bola de helado y nata', precio: '4.50€' },
+    { nombre: 'BELLATRIX', img: 'images/bellatrix.png', fondo: 'images/fondos/fondo_bellatrix.png', descripcion: 'Americano con licor de avellana y nata', precio: '4.50€' },
+    { nombre: 'MONJE PANDAREN', img: 'images/panda.png', fondo: 'images/fondos/fondo_panda.png', descripcion: 'Café con leche, baileys y nata', precio: '4.50€' },
+    { nombre: 'SIRIUS BLACK', img: 'images/sirius.png', fondo: 'images/fondos/fondo_sirius.png', descripcion: 'Americano con licor café y nata', precio: '4.50€' },
+    { nombre: 'PROFESOR LUPIN', img: 'images/lupin.png', fondo: 'images/fondos/fondo_lupin.png', descripcion: 'Café con leche, crema de orujo y nata', precio: '4.50€' },
+    { nombre: 'FLAMBEADO DE MOU', img: 'images/flambeado.png', fondo: 'images/fondos/fondo_flambeado.png', descripcion: 'Americano con whisky flambeado y nata', precio: '3.50€' },
+];
+---
+
 <section class="flex flex-col p-10 justify-center items-center">
-    
-        <h2 class="text-6xl mb-10 font-bold text-pink-500">CAFÉS ESPECIALES</h2>
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-y-10 gap-4">
-            <!--Jon Snow-->
-            <div class="flex flex-col justify-between items-center  bg-[url('images/fondos/fondo_jon.png')] bg-cover bg-center rounded-2xl">
-                <img class="w-md" src="images/jon.png">
-                <div class="flex flex-col bg-black mb-5 p-5 rounded-2xl">
-                    <h4 class="font-bold text-4xl ">JON SNOW</h4>
-                    <p class="">Americano con leche condensada</p>
-                    <p>Precio: 2.20€</p>
+    <h2 class="text-6xl mb-10 font-bold text-fuchsia-900 font-Mountain-Bold">CAFÉS ESPECIALES</h2>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-y-10 gap-4">
+        {
+            cafes.map((cafe) => (
+                <div class="flex flex-col justify-between items-center bg-cover bg-center rounded-2xl" style={`background-image: url('${cafe.fondo}')`}>
+                    <img class={cafe.imgClass ?? 'w-md'} src={cafe.img}>
+                    <div class="flex flex-col bg-black mb-5 p-5 rounded-2xl">
+                        <h4 class="font-bold text-3xl font-Cinzel">{cafe.nombre}</h4>
+                        <p>{cafe.descripcion}</p>
+                        <p class="text-2xl font-Nabla">{cafe.precio}</p>
+                    </div>
                 </div>
-            </div>
-            
-            <!--Dragon Fujur-->
-            <div class="flex flex-col justify-between items-center bg-[url('images/fondos/fondo_fuju.png')] bg-cover bg-center  rounded-2xl">
-                <img class="w-md " src="images/fuju.png">
-                <div class="flex flex-col bg-black mb-5 p-5 rounded-2xl">
-                    <h4 class="font-bold text-4xl ">DRAGÓN FUJUR</h4>
-                    <p>Café con leche y leche condensada</p>
-                    <p>Precio: 2.30€</p>
-                </div>
-            </div>
-            
-            <!--Abeja Maya-->
-            <div class="flex flex-col justify-between items-center bg-[url('images/fondos/fondo_maya.png')] bg-cover bg-center rounded-2xl">
-                <img class="w-md" src="images/maya.png">
-                <div class="flex flex-col bg-black mb-5 p-5 rounded-2xl">
-                    <h4 class="font-bold text-4xl">ABEJA MAYA</h4>
-                    <p>Café con leche y miel</p>
-                    <p>Precio: 2.30€</p>
-                </div>
-            </div>
-            
-            <!--Huargo Fantasma-->
-            <div class="flex flex-col justify-between items-center bg-[url('images/fondos/fondo_huargo.png')] bg-cover bg-center rounded-2xl">
-                <img class="w-xs " src="images/huargo.png">
-                <div class="flex flex-col bg-black mb-5 p-5 rounded-2xl">
-                    <h4 class="font-bold text-4xl">HUARGO FANTASMA</h4>
-                    <p>Americano con leche condensada y nata</p>
-                    <p>Precio: 3.80€</p>
-                </div>
-            </div>
-            
-            <!--Princesa Mononoke-->
-            <div class="flex flex-col justify-between items-center bg-[url('images/fondos/fondo_mononoke.png')] bg-cover bg-center rounded-2xl">
-                <img class="w-md" src="images/mononoke.png">
-                <div class="flex flex-col bg-black mb-5 p-5 rounded-2xl">
-                    <h4 class="font-bold text-4xl">PRINCESA MONONOKE</h4>
-                    <p>Café con leche cacao y nata</p>
-                    <p>Precio: 3.80€</p>
-                </div>
-            </div>
-            
-            <!--Mago Belgarath-->
-            <div class="flex flex-col justify-between items-center bg-[url('images/fondos/fondo_mago.png')] bg-cover bg-center rounded-2xl">
-                <img class="w-md" src="images/mago.png">
-                <div class="flex flex-col bg-black mb-5 p-5 rounded-2xl">
-                    <h4 class="font-bold text-4xl">MAGO BELGARATH</h4>
-                    <p>Americano bola de helado y nata</p>
-                    <p>Precio: 4.50€</p>
-                </div>
-            </div>
-            
-            <!--Arya Stark-->
-            <div class="flex flex-col justify-between items-center bg-[url('images/fondos/fondo_arya.png')] bg-cover bg-center rounded-2xl">
-                <img class="w-md" src="images/arya.png">
-                <div class="flex flex-col bg-black mb-5 p-5 rounded-2xl">
-                    <h4 class="font-bold text-4xl">ARYA STARK</h4>
-                    <p>Café con leche bola de helado y nata</p>
-                    <p>Precio: 4.50€</p>
-                </div>
-            </div>
-            
-            <!--Bellatrix-->
-            <div class="flex flex-col justify-between items-center bg-[url('images/fondos/fondo_bellatrix.png')] bg-cover bg-center rounded-2xl">
-                <img class="w-md" src="images/bellatrix.png">
-                <div class="flex flex-col bg-black mb-5 p-5 rounded-2xl">
-                    <h4 class="font-bold text-4xl">BELLATRIX</h4>
-                    <p> AVADA KEDAVRA!</p>
-                    <p>Americano con licor de avellana y nata</p>
-                    <p>Precio: 4.50€</p>
-                </div>
-            </div>
-            
-            <!--Monje Pandaren-->
-            <div class="flex flex-col justify-between items-center bg-[url('images/fondos/fondo_panda.png')] bg-cover bg-center rounded-2xl">
-                <img class="w-md" src="images/panda.png">
-                <div class="flex flex-col bg-black mb-5 p-5 rounded-2xl">
-                    <h4 class="font-bold text-4xl">MONJE PANDAREN</h4>
-                    <p>Café con leche, baileys y nata</p>
-                    <p>Precio: 4.50€</p>
-                </div>
-            </div>
-            
-            <!--Sirius Black-->
-            <div class="flex flex-col justify-between items-center bg-[url('images/fondos/fondo_sirius.png')] bg-cover bg-center rounded-2xl">
-                <img class="w-md" src="images/sirius.png">
-                <div class="flex flex-col bg-black mb-5 p-5 rounded-2xl">
-                    <h4 class="font-bold text-4xl">SIRIUS BLACK</h4>
-                    <p>Americano con licor café y nata</p>
-                    <p>Precio: 4.50€</p>
-                </div>
-            </div>
-            
-            <!--Profesor Remus Lupin-->
-            <div class="flex flex-col justify-between items-center bg-[url('images/fondos/fondo_lupin.png')] bg-cover bg-center rounded-2xl">
-                <img class="w-md" src="images/lupin.png">
-                <div class="flex flex-col bg-black mb-5 p-5 rounded-2xl">
-                    <h4 class="font-bold text-4xl">PROFESOR REMUS LUPIN</h4>
-                    <p>Café con leche, crema de orujo y nata</p>
-                    <p>Precio: 4.50€</p>
-                </div>
-            </div>
-        </div>
-        
-    
+            ))
+        }
+    </div>
 </section>

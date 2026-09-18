@@ -1,1 +1,25 @@
 @import "tailwindcss";
+@font-face {
+    font-family: "Mountain-Bold";
+    src: url("fonts/Mountain-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Mountain-Regular";
+    src: url("fonts/Mountain-Regular.ttf");
+}
+@font-face {
+    font-family: "Cinzel";
+    src: url("fonts/Cinzel.ttf");
+}
+@font-face {
+    font-family: "Nabla";
+    src: url("fonts/Nabla.ttf");
+}
+
+@theme{
+    --font-Mountain-Bold:"Mountain-Bold";
+    --font-Mountain-Regular:"Mountain-Regular";
+    --font-Cinzel:"Cinzel";
+    --font-Nabla:"Nabla";
+}
